@@ -1,0 +1,6 @@
+.env/
+secure-backups/
+*.gpg
+*.asc
+*.key
+*_Key
