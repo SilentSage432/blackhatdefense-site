@@ -1,5 +1,5 @@
 /* ===============================
-   Black Hat Defense LLC – Base Theme
+   Black Hat Defense LLC – Dark Theme
    =============================== */
 
 :root {
@@ -12,7 +12,7 @@
   --border-soft: #1e2330;
 }
 
-/* Global Reset */
+/* Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -26,73 +26,8 @@ body {
   line-height: 1.6;
 }
 
-/* Layout */
-main {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-}
-
-section {
-  margin-bottom: 4rem;
-}
-
-/* Typography */
-h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-}
-
-h2 {
-  font-size: 1.75rem;
-  margin-bottom: 1rem;
-}
-
-p {
-  color: var(--text-muted);
-  max-width: 800px;
-  margin-bottom: 1rem;
-}
-
-/* Buttons */
-a.button {
-  display: inline-block;
-  margin-top: 1.5rem;
-  padding: 0.75rem 1.5rem;
-  background-color: var(--accent-red);
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 6px;
-  transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-a.button:hover {
-  background-color: var(--accent-red-hover);
-  transform: translateY(-1px);
-}
-
-/* Footer */
-footer {
-  border-top: 1px solid var(--border-soft);
-  padding: 2rem;
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 0.9rem;
-}
-
-footer a {
-  color: var(--text-muted);
-  text-decoration: none;
-}
-
-footer a:hover {
-  color: #ffffff;
-}
-
 /* ===============================
-   Header & Navigation
+   Header
    =============================== */
 
 .site-header {
@@ -113,14 +48,8 @@ footer a:hover {
   justify-content: space-between;
 }
 
-.logo-text {
-  font-size: 1.1rem;
-  letter-spacing: 0.08em;
-  color: #ffffff;
-}
-
-.logo-accent {
-  color: var(--accent-red);
+.logo img {
+  height: 36px;
 }
 
 .main-nav a {
@@ -128,43 +57,94 @@ footer a:hover {
   text-decoration: none;
   color: var(--text-muted);
   font-weight: 500;
-  transition: color 0.2s ease;
 }
 
 .main-nav a:hover {
   color: #ffffff;
 }
 
-.main-nav .nav-cta {
+.nav-cta {
   padding: 0.5rem 1rem;
   border: 1px solid var(--accent-red);
-  border-radius: 5px;
+  border-radius: 6px;
   color: #ffffff;
 }
 
-.main-nav .nav-cta:hover {
+.nav-cta:hover {
   background-color: var(--accent-red);
 }
 
 /* ===============================
-   Services Section
+   Layout
+   =============================== */
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+section {
+  margin-bottom: 5rem;
+}
+
+/* ===============================
+   Typography
+   =============================== */
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: var(--text-muted);
+  max-width: 800px;
+  margin-bottom: 1rem;
+}
+
+/* ===============================
+   Hero
+   =============================== */
+
+.hero {
+  padding-top: 2rem;
+}
+
+/* ===============================
+   Buttons
+   =============================== */
+
+.button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--accent-red);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.button:hover {
+  background-color: var(--accent-red-hover);
+}
+
+/* ===============================
+   Services
    =============================== */
 
 .services {
-  max-width: 1100px;
-  margin: 5rem auto;
-  padding: 0 2rem;
-}
-
-.services h2 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  margin-top: 4rem;
 }
 
 .section-intro {
-  color: var(--text-muted);
   margin-bottom: 3rem;
-  max-width: 700px;
 }
 
 .service-grid {
@@ -176,8 +156,8 @@ footer a:hover {
 .service-card {
   background: linear-gradient(
     180deg,
-    rgba(18, 20, 25, 0.9),
-    rgba(12, 14, 18, 0.9)
+    rgba(18, 20, 25, 0.95),
+    rgba(12, 14, 18, 0.95)
   );
   border: 1px solid var(--border-soft);
   border-radius: 10px;
@@ -192,10 +172,30 @@ footer a:hover {
 
 .service-card p {
   color: var(--text-muted);
-  line-height: 1.6;
 }
 
 .service-card:hover {
   transform: translateY(-4px);
   border-color: var(--accent-red);
+}
+
+/* ===============================
+   Footer
+   =============================== */
+
+footer {
+  border-top: 1px solid var(--border-soft);
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ffffff;
 }
