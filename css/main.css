@@ -1,6 +1,11 @@
+/* ===============================
+   Black Hat Defense LLC – Theme
+   =============================== */
+
 :root {
   --bg-main: #0b0d10;
-  --bg-section: #12151b;
+  --bg-dark: #0e1117;
+  --bg-card: #12151b;
   --text-main: #e6e6e6;
   --text-muted: #a0a6b0;
   --accent-red: #c4161c;
@@ -8,6 +13,7 @@
   --border-soft: #1e2330;
 }
 
+/* Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -27,7 +33,7 @@ body {
 
 .site-header {
   background: rgba(11, 13, 16, 0.9);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border-soft);
   position: sticky;
   top: 0;
@@ -35,32 +41,19 @@ body {
 }
 
 .header-inner {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 1.25rem 2rem;
+  padding: 1.2rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* LOGO FIX */
-.logo {
-  display: flex;
-  align-items: center;
+.logo img {
+  height: 56px;
+  background: transparent;
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.35));
 }
-
-.logo-img {
-  height: 64px;                /* ⬅ MUCH BIGGER */
-  width: auto;
-  padding: 8px 12px;           /* ⬅ breathing room */
-  background-color: #0b0d10;   /* ⬅ dark backing */
-  border: 1px solid #ffffff;   /* ⬅ white outline */
-  border-radius: 8px;
-}
-
-/* ===============================
-   Navigation
-   =============================== */
 
 .main-nav a {
   margin-left: 2rem;
@@ -74,9 +67,9 @@ body {
 }
 
 .main-nav .nav-cta {
-  padding: 0.5rem 1rem;
+  padding: 0.45rem 1rem;
   border: 1px solid var(--accent-red);
-  border-radius: 5px;
+  border-radius: 6px;
   color: #ffffff;
 }
 
@@ -89,28 +82,28 @@ body {
    =============================== */
 
 main {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 5rem 2rem;
 }
 
 section {
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
 }
 
-h1 {
-  font-size: 3rem;
+/* ===============================
+   Hero
+   =============================== */
+
+.hero h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
   margin-bottom: 1.5rem;
 }
 
-h2 {
-  font-size: 1.75rem;
-  margin-bottom: 1rem;
-}
-
-p {
+.hero p {
   color: var(--text-muted);
-  max-width: 800px;
+  max-width: 820px;
   margin-bottom: 1rem;
 }
 
@@ -118,57 +111,71 @@ p {
    Services
    =============================== */
 
-.services {
-  margin-top: 5rem;
+.services h2 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
 }
 
 .section-intro {
+  color: var(--text-muted);
   margin-bottom: 3rem;
+  max-width: 700px;
 }
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
 }
 
 .service-card {
   background: linear-gradient(
     180deg,
-    rgba(18, 20, 25, 0.9),
-    rgba(12, 14, 18, 0.9)
+    rgba(18, 20, 25, 0.95),
+    rgba(12, 14, 18, 0.95)
   );
   border: 1px solid var(--border-soft);
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 2rem;
+  transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
 .service-card h3 {
+  color: #ffffff;
   margin-bottom: 0.75rem;
 }
 
+.service-card p {
+  color: var(--text-muted);
+}
+
 .service-card:hover {
+  transform: translateY(-6px);
   border-color: var(--accent-red);
 }
 
 /* ===============================
-   Buttons & Footer
+   Buttons
    =============================== */
 
-a.button {
+.button {
   display: inline-block;
-  margin-top: 2rem;
-  padding: 0.75rem 1.5rem;
+  margin-top: 2.5rem;
+  padding: 0.85rem 1.75rem;
   background-color: var(--accent-red);
   color: #ffffff;
   text-decoration: none;
-  border-radius: 6px;
   font-weight: 600;
+  border-radius: 6px;
 }
 
-a.button:hover {
+.button:hover {
   background-color: var(--accent-red-hover);
 }
+
+/* ===============================
+   Footer
+   =============================== */
 
 footer {
   border-top: 1px solid var(--border-soft);
@@ -176,4 +183,13 @@ footer {
   text-align: center;
   color: var(--text-muted);
   font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ffffff;
 }
