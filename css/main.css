@@ -247,3 +247,44 @@ footer a:hover {
     margin-top: 2rem;
   }
 }
+
+/* ===============================
+   MOBILE STABILITY PATCH
+   Prevent orientation-change repaint loops
+   =============================== */
+
+@media (max-width: 768px) {
+
+  /* Disable backdrop blur (major cause of refresh loops) */
+  .site-header {
+    backdrop-filter: none;
+  }
+
+  /* Kill massive blurred background layers on mobile */
+  .hero-section::before,
+  .hero-section::after,
+  .about-section::before,
+  .about-section::after {
+    display: none;
+  }
+
+  /* Reduce glow intensity to avoid GPU thrashing */
+  .hero-image img,
+  .about-image img {
+    filter: drop-shadow(0 0 40px rgba(255, 60, 55, 0.6));
+  }
+
+  /* Lock hero layout to prevent flex recalculation loops */
+  .hero-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Stabilize image sizing during rotation */
+  .hero-image img {
+    width: 280px;
+    max-width: 85vw;
+    height: auto;
+  }
+}

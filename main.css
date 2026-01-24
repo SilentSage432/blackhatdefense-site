@@ -529,3 +529,39 @@ body {
   color: #5a606c;
   font-size: 0.79rem;
 }
+
+/* ===============================
+   MOBILE STABILITY PATCH
+   Prevent orientation-change repaint loops
+   =============================== */
+
+@media (max-width: 768px) {
+
+  .site-header {
+    backdrop-filter: none;
+  }
+
+  .hero-section::before,
+  .hero-section::after,
+  .about-section::before,
+  .about-section::after {
+    display: none;
+  }
+
+  .hero-image img,
+  .about-image img {
+    filter: drop-shadow(0 0 40px rgba(255, 60, 55, 0.6));
+  }
+
+  .hero-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-image img {
+    width: 280px;
+    max-width: 85vw;
+    height: auto;
+  }
+}
