@@ -84,76 +84,48 @@ body {
 
 /* HERO SECTION */
 .hero-section {
-  background: linear-gradient(to right, #050608 0%, #080a0e 30%, #0a0c10 60%, #0c0e12 100%);
+  /* Base layer = gradient + subtle red glow + texture + gridlines */
+  background-color: #080a0e;
+  background-image:
+    linear-gradient(to right, #050608 0%, #080a0e 30%, #0a0c10 60%, #0c0e12 100%),
+    radial-gradient(circle at 78% 48%, rgba(255, 40, 40, 0.28) 0%, rgba(255, 40, 40, 0.14) 28%, transparent 62%),
+    url("images/hero-texture.png"),
+    repeating-linear-gradient(
+      88deg,
+      transparent 0px,
+      transparent 110px,
+      rgba(196, 22, 28, 0.018) 110px,
+      rgba(196, 22, 28, 0.018) 111px
+    ),
+    repeating-linear-gradient(
+      2deg,
+      transparent 0px,
+      transparent 110px,
+      rgba(196, 22, 28, 0.018) 110px,
+      rgba(196, 22, 28, 0.018) 111px
+    );
+  background-blend-mode: normal, screen, overlay, normal, normal;
+  background-size: cover, cover, cover, cover, cover;
+  background-position: center, center, center, center, center;
+  background-repeat: no-repeat;
+
   padding: 4.5rem 0 5rem 0;
   position: relative;
   overflow: hidden;
 }
 
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: 5%;
-  width: 950px;
-  height: 950px;
-  transform: translate(0, -50%);
-  background: radial-gradient(
-    circle,
-    rgba(255, 70, 60, 0.55) 0%,
-    rgba(240, 50, 45, 0.48) 10%,
-    rgba(220, 35, 35, 0.38) 20%,
-    rgba(200, 25, 28, 0.28) 35%,
-    rgba(180, 20, 25, 0.15) 50%,
-    transparent 70%
-  );
-  filter: blur(120px);
-  pointer-events: none;
-  z-index: 0;
-}
-
+/* Center watermark: BHD_Logo1.png (hat emblem) */
 .hero-section::after {
-  content: '';
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image:
-    radial-gradient(circle at 87% 18%, rgba(255, 70, 60, 0.22) 0%, transparent 2%),
-    radial-gradient(circle at 84% 32%, rgba(255, 60, 55, 0.18) 0%, transparent 1.8%),
-    radial-gradient(circle at 90% 48%, rgba(255, 65, 58, 0.15) 0%, transparent 2%),
-    radial-gradient(circle at 86% 62%, rgba(255, 55, 50, 0.12) 0%, transparent 1.5%),
-    radial-gradient(circle at 89% 75%, rgba(255, 50, 48, 0.1) 0%, transparent 1.3%),
-    radial-gradient(circle at 92% 85%, rgba(255, 45, 45, 0.08) 0%, transparent 1.2%),
-    repeating-linear-gradient(
-      2deg,
-      transparent 0px,
-      transparent 98px,
-      rgba(196, 22, 28, 0.022) 98px,
-      rgba(196, 22, 28, 0.022) 99px
-    ),
-    repeating-linear-gradient(
-      88deg,
-      transparent 0px,
-      transparent 98px,
-      rgba(196, 22, 28, 0.022) 98px,
-      rgba(196, 22, 28, 0.022) 99px
-    ),
-    repeating-linear-gradient(
-      47deg,
-      transparent 0px,
-      transparent 115px,
-      rgba(196, 22, 28, 0.015) 115px,
-      rgba(196, 22, 28, 0.015) 116px
-    ),
-    repeating-linear-gradient(
-      133deg,
-      transparent 0px,
-      transparent 115px,
-      rgba(196, 22, 28, 0.015) 115px,
-      rgba(196, 22, 28, 0.015) 116px
-    );
+  inset: 0;
+  background-image: url("assets/images/BHD_Logo1.png");
+  background-repeat: no-repeat;
+  background-position: 64% 50%;
+  background-size: 780px auto;
+  opacity: 0.14;            /* tune this up/down */
+  filter: drop-shadow(0 0 40px rgba(255, 50, 50, 0.10));
+  mix-blend-mode: screen;   /* glow without washing everything */
   pointer-events: none;
   z-index: 0;
 }
@@ -166,13 +138,16 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 3rem;
+
   position: relative;
-  z-index: 1;
+  z-index: 1; /* above background layers */
 }
 
 .hero-content {
   flex: 1;
-  max-width: 485px;
+  max-width: 520px;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-content h1 {
@@ -190,7 +165,7 @@ body {
   color: #8b92a0;
   margin-bottom: 1.75rem;
   line-height: 1.68;
-  max-width: 430px;
+  max-width: 460px;
 }
 
 .btn-hero {
@@ -212,37 +187,70 @@ body {
   box-shadow: 0 0 30px rgba(196, 22, 28, 0.75), 0 3px 12px rgba(0, 0, 0, 0.6);
 }
 
+/* Hero corner logo: BHD_Logo.png (full logo) */
 .hero-image {
   flex: 0 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  position: relative;
+  z-index: 2;
 }
 
 .hero-image img {
-  width: 460px;
-  max-width: 460px;
+  width: 360px;
+  max-width: 360px;
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 0 80px rgba(255, 60, 55, 1.2))
-          drop-shadow(0 0 140px rgba(240, 40, 40, 0.9))
-          drop-shadow(0 0 200px rgba(220, 30, 35, 0.6))
-          drop-shadow(0 0 280px rgba(200, 22, 28, 0.4));
+  filter: drop-shadow(0 0 55px rgba(255, 55, 55, 0.55))
+          drop-shadow(0 0 120px rgba(200, 22, 28, 0.22));
 }
 
+/* DEMO-SPECIFIC: park the hero logo in the bottom-right corner */
+.demo-hero-scale .hero-container {
+  padding-right: 6.5rem; /* prevents text collision with corner logo */
+}
+
+.demo-hero-scale .hero-image {
+  position: absolute;
+  right: 2.5rem;
+  bottom: 2.25rem;
+  margin: 0;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
   .hero-container {
     flex-direction: column;
     text-align: center;
   }
 
-  .hero-image img {
-    width: 300px;
-    max-width: 90%;
+  .hero-section::after {
+    background-position: 50% 42%;
+    background-size: 520px auto;
+    opacity: 0.10;
+  }
+
+  .demo-hero-scale .hero-container {
+    padding-right: 2.5rem;
+  }
+
+  .demo-hero-scale .hero-image {
+    position: relative;
+    right: auto;
+    bottom: auto;
     margin-top: 2rem;
   }
-}
 
+  .hero-image img {
+    width: 280px;
+    max-width: 85vw;
+    height: auto;
+  }
+}
 
 /* SERVICES SECTION */
 .services-section {
@@ -539,13 +547,6 @@ body {
 
   .site-header {
     backdrop-filter: none;
-  }
-
-  .hero-section::before,
-  .hero-section::after,
-  .about-section::before,
-  .about-section::after {
-    display: none;
   }
 
   .hero-image img,
