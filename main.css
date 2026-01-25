@@ -566,3 +566,358 @@ body {
     height: auto;
   }
 }
+
+
+/* ===============================
+   SERVICES PAGE
+   =============================== */
+
+.services-page {
+  background-color: #080a0e;
+}
+
+/* Hero */
+.services-hero {
+  background: linear-gradient(to bottom, #050608, #080a0e);
+  padding: 4.5rem 0 3.5rem 0;
+}
+
+.services-hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+.services-hero h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.services-hero p {
+  color: #8b92a0;
+  max-width: 720px;
+  line-height: 1.7;
+}
+
+.services-hero-note {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+/* Service blocks */
+.services-detail {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3.5rem 2.5rem;
+  display: grid;
+  gap: 2.2rem;
+}
+
+.service-block {
+  background: linear-gradient(
+    to bottom,
+    rgba(16, 19, 25, 0.98),
+    rgba(12, 14, 19, 0.98)
+  );
+  border: 1px solid rgba(30, 35, 48, 0.45);
+  border-radius: 10px;
+  padding: 2.2rem 2.4rem;
+  box-shadow:
+    0 6px 28px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(196, 22, 28, 0.08);
+}
+
+.service-block h2 {
+  font-size: 1.45rem;
+  margin-bottom: 0.75rem;
+}
+
+.service-block p {
+  color: #8b92a0;
+  line-height: 1.65;
+  margin-bottom: 0.75rem;
+}
+
+.service-block ul {
+  margin-top: 0.8rem;
+  padding-left: 1.1rem;
+}
+
+.service-block li {
+  margin-bottom: 0.4rem;
+  color: #cfd3da;
+}
+
+/* CTA */
+.services-cta {
+  text-align: center;
+  padding: 4rem 2.5rem 5rem;
+  background: radial-gradient(circle at center, rgba(196, 22, 28, 0.18), transparent 60%);
+}
+
+.services-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.services-cta p {
+  color: #8b92a0;
+  margin-bottom: 1.6rem;
+}
+
+
+/* ===============================
+   CONTACT PAGE (Option A)
+   =============================== */
+
+.contact-page {
+  background-color: #080a0e;
+}
+
+/* Hero */
+.contact-hero {
+  padding: 4.5rem 0 3.5rem;
+  background: linear-gradient(to bottom, #050608, #080a0e);
+}
+
+.contact-hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+.contact-hero h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 1.1rem;
+}
+
+.contact-hero p {
+  color: #8b92a0;
+  line-height: 1.7;
+  max-width: 720px;
+}
+
+/* Content */
+.contact-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3.5rem 2.5rem 5rem;
+  display: grid;
+  gap: 2.2rem;
+}
+
+.contact-card {
+  background: linear-gradient(
+    to bottom,
+    rgba(16, 19, 25, 0.98),
+    rgba(12, 14, 19, 0.98)
+  );
+  border: 1px solid rgba(30, 35, 48, 0.45);
+  border-radius: 10px;
+  padding: 2.2rem 2.4rem;
+  box-shadow:
+    0 6px 28px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(196, 22, 28, 0.08);
+}
+
+.contact-card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.contact-card p {
+  color: #8b92a0;
+  line-height: 1.65;
+  margin-bottom: 0.7rem;
+}
+
+.contact-card ul {
+  margin: 0.8rem 0 0.8rem 1.2rem;
+  color: #8b92a0;
+}
+
+.contact-card li {
+  margin-bottom: 0.4rem;
+}
+
+.contact-card a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.contact-card a:hover {
+  color: #c4161c;
+}
+
+
+/* ===============================
+   ABOUT PAGE (Option A)
+   =============================== */
+
+.about-page {
+  background-color: #080a0e;
+}
+
+/* Hero */
+.about-hero {
+  padding: 4.5rem 0 3.5rem;
+  background: linear-gradient(to bottom, #050608, #080a0e);
+}
+
+.about-hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+.about-hero h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 1.1rem;
+}
+
+.about-hero p {
+  color: #8b92a0;
+  line-height: 1.7;
+  max-width: 780px;
+}
+
+/* Content */
+.about-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3.5rem 2.5rem 5rem;
+  display: grid;
+  gap: 2.2rem;
+}
+
+.about-card {
+  background: linear-gradient(
+    to bottom,
+    rgba(16, 19, 25, 0.98),
+    rgba(12, 14, 19, 0.98)
+  );
+  border: 1px solid rgba(30, 35, 48, 0.45);
+  border-radius: 10px;
+  padding: 2.2rem 2.4rem;
+  box-shadow:
+    0 6px 28px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(196, 22, 28, 0.08);
+}
+
+.about-card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.about-card p {
+  color: #8b92a0;
+  line-height: 1.65;
+  margin-bottom: 0.7rem;
+}
+
+.about-card ul {
+  margin: 0.8rem 0 0.8rem 1.2rem;
+  color: #8b92a0;
+}
+
+.about-card li {
+  margin-bottom: 0.4rem;
+}
+
+.about-card a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.about-card a:hover {
+  color: #c4161c;
+}
+
+
+/* ===============================
+   PRIVACY / POLICY PAGES
+   =============================== */
+
+.policy-page {
+  background-color: #080a0e;
+}
+
+/* Hero */
+.policy-hero {
+  padding: 4.5rem 0 3.5rem;
+  background: linear-gradient(to bottom, #050608, #080a0e);
+}
+
+.policy-hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+.policy-hero h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 1.1rem;
+}
+
+.policy-hero p {
+  color: #8b92a0;
+  line-height: 1.7;
+  max-width: 780px;
+}
+
+/* Content */
+.policy-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3.5rem 2.5rem 5rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.policy-card {
+  background: linear-gradient(
+    to bottom,
+    rgba(16, 19, 25, 0.98),
+    rgba(12, 14, 19, 0.98)
+  );
+  border: 1px solid rgba(30, 35, 48, 0.45);
+  border-radius: 10px;
+  padding: 2.1rem 2.4rem;
+  box-shadow:
+    0 6px 28px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(196, 22, 28, 0.06);
+}
+
+.policy-card h2 {
+  font-size: 1.32rem;
+  margin-bottom: 0.7rem;
+}
+
+.policy-card p {
+  color: #8b92a0;
+  line-height: 1.65;
+  margin-bottom: 0.6rem;
+}
+
+.policy-card ul {
+  margin: 0.7rem 0 0.7rem 1.2rem;
+  color: #8b92a0;
+}
+
+.policy-card li {
+  margin-bottom: 0.35rem;
+}
+
+.policy-card a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.policy-card a:hover {
+  color: #c4161c;
+}
