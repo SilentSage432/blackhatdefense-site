@@ -25,7 +25,7 @@ body {
 .header-container {
   max-width: 1320px;
   margin: 0 auto;
-  padding: 0 2.5rem;
+  padding: 0 clamp(1rem, 4vw, 2.5rem);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -123,7 +123,7 @@ body {
   background-repeat: no-repeat;
   background-position: 64% 50%;
   background-size: 780px auto;
-  opacity: 0.14;            /* tune this up/down */
+  opacity: 0.10;            /* tune this up/down */
   filter: drop-shadow(0 0 40px rgba(255, 50, 50, 0.10));
   mix-blend-mode: screen;   /* glow without washing everything */
   pointer-events: none;
@@ -133,10 +133,10 @@ body {
 .hero-container {
   max-width: 1320px;
   margin: 0 auto;
-  padding: 0 2.5rem;
+  padding: 0 clamp(1rem, 4vw, 2.5rem);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 3rem;
 
   position: relative;
@@ -145,13 +145,14 @@ body {
 
 .hero-content {
   flex: 1;
-  max-width: 520px;
+  max-width: 600px;
+  margin-right: clamp(2rem, 6vw, 6rem);
   position: relative;
   z-index: 2;
 }
 
 .hero-content h1 {
-  font-size: 3.1rem;
+  font-size: clamp(2rem, 4vw, 3.1rem);
   font-weight: 700;
   line-height: 1.06;
   margin-bottom: 1.25rem;
@@ -199,8 +200,7 @@ body {
 }
 
 .hero-image img {
-  width: 360px;
-  max-width: 360px;
+  width: min(360px, 100%);
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 0 55px rgba(255, 55, 55, 0.55))
@@ -221,34 +221,63 @@ body {
   align-items: flex-end;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
+/* ===============================
+   TABLET BREAKPOINT (1024px)
+   Alignment refinements, no layout direction change
+   =============================== */
+
+@media (max-width: 1024px) {
   .hero-container {
-    flex-direction: column;
-    text-align: center;
+    gap: 2rem;
   }
 
-  .hero-section::after {
-    background-position: 50% 42%;
-    background-size: 520px auto;
-    opacity: 0.10;
+  .hero-content {
+    max-width: 520px;
+    margin-right: clamp(1.5rem, 5vw, 3rem);
   }
 
-  .demo-hero-scale .hero-container {
-    padding-right: 2.5rem;
-  }
-
-  .demo-hero-scale .hero-image {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    margin-top: 2rem;
+  .hero-content p {
+    max-width: 400px;
   }
 
   .hero-image img {
-    width: 280px;
-    max-width: 85vw;
+    width: min(300px, 100%);
     height: auto;
+  }
+
+  .hero-section {
+    padding: 4rem 0 4.25rem 0;
+  }
+
+  .services-section {
+    padding: 3.5rem 0 4rem 0;
+  }
+
+  .about-section {
+    padding: 4rem 0 4.25rem 0;
+  }
+
+  .about-container {
+    gap: 2.25rem;
+  }
+
+  .services-grid {
+    gap: 1.35rem;
+  }
+
+  .demo-hero-scale .hero-container {
+    padding-right: clamp(1rem, 4vw, 4rem);
+  }
+}
+
+/* ===============================
+   SMALL TABLET (900px)
+   Services grid stacks to 1 column
+   =============================== */
+
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -265,7 +294,7 @@ body {
 }
 
 .services-header h2 {
-  font-size: 2.15rem;
+  font-size: clamp(1.6rem, 3vw, 2.15rem);
   font-weight: 700;
   margin-bottom: 0.32rem;
   color: #ffffff;
@@ -280,7 +309,7 @@ body {
 .services-grid {
   max-width: 1320px;
   margin: 0 auto;
-  padding: 0 2.5rem;
+  padding: 0 clamp(1rem, 4vw, 2.5rem);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.65rem;
@@ -337,7 +366,7 @@ body {
 }
 
 .service-card h3 {
-  font-size: 1.28rem;
+  font-size: clamp(1.05rem, 2vw, 1.28rem);
   font-weight: 600;
   margin-bottom: 0.62rem;
   color: #ffffff;
@@ -429,29 +458,28 @@ body {
 .about-container {
   max-width: 1320px;
   margin: 0 auto;
-  padding: 0 2.5rem;
-  display: flex;
+  padding: 0 clamp(1rem, 4vw, 2.5rem);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  justify-content: space-between;
-  gap: 3rem;
+  gap: clamp(2rem, 4vw, 3rem);
   position: relative;
   z-index: 1;
 }
 
-.about-content {
-  flex: 1;
-  max-width: 485px;
+.about-section .about-content {
+  min-width: 0;
 }
 
-.about-content h2 {
-  font-size: 2.15rem;
+.about-section .about-content h2 {
+  font-size: clamp(1.6rem, 3vw, 2.15rem);
   font-weight: 700;
   margin-bottom: 0.72rem;
   color: #ffffff;
   letter-spacing: -0.018em;
 }
 
-.about-content h3 {
+.about-section .about-content h3 {
   font-size: 1.38rem;
   font-weight: 600;
   margin-bottom: 0.92rem;
@@ -459,7 +487,7 @@ body {
   letter-spacing: -0.012em;
 }
 
-.about-content p {
+.about-section .about-content p {
   font-size: 0.98rem;
   color: #8b92a0;
   line-height: 1.68;
@@ -473,8 +501,7 @@ body {
 }
 
 .about-image img {
-  width: 320px;
-  max-width: 320px;
+  width: min(320px, 100%);
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 0 80px rgba(255, 60, 55, 1.2))
@@ -483,11 +510,125 @@ body {
           drop-shadow(0 0 280px rgba(200, 22, 28, 0.4));
 }
 
+/* ===============================
+   MOBILE (consolidated)
+   Prevent orientation-change repaint loops + layout
+   =============================== */
+
+@media (max-width: 768px) {
+  .site-header {
+    backdrop-filter: none;
+  }
+
+  .header-container {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .header-nav {
+    gap: 1.25rem;
+  }
+
+  .footer-container {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .hero-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  .hero-content h1 {
+    line-height: 1.15;
+  }
+
+  .hero-content p {
+    max-width: 100%;
+  }
+
+  .hero-section,
+  .services-section,
+  .about-section {
+    padding: 3rem 0;
+  }
+
+  .hero-section::after {
+    background-position: 50% 42%;
+    background-size: 520px auto;
+    opacity: 0.10;
+  }
+
+  .demo-hero-scale .hero-container {
+    padding-right: clamp(1rem, 4vw, 2.5rem);
+  }
+
+  .demo-hero-scale .hero-image {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-top: 2rem;
+  }
+
+  .hero-image img,
+  .about-image img {
+    filter: drop-shadow(0 0 40px rgba(255, 60, 55, 0.6));
+  }
+
+  .hero-image img {
+    width: 280px;
+    max-width: 85vw;
+    height: auto;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    padding: 1.6rem 1.6rem;
+  }
+
+  .services-detail,
+  .contact-content,
+  .about-page .about-content,
+  .policy-content {
+    padding-top: 2.5rem;
+    padding-bottom: 3.5rem;
+    padding-left: clamp(1rem, 4vw, 2.5rem);
+    padding-right: clamp(1rem, 4vw, 2.5rem);
+  }
+
+  .services-header p,
+  .about-section .about-content p,
+  .contact-card p,
+  .about-card p,
+  .policy-card p {
+    font-size: 0.92rem;
+  }
+
+  .contact-card,
+  .about-card,
+  .policy-card {
+    padding: 1.6rem 1.6rem;
+  }
+}
+
 /* FOOTER */
 .site-footer {
   background: rgba(8, 10, 14, 0.98);
   border-top: 1px solid rgba(30, 35, 48, 0.18);
-  padding: 1.4rem 2.5rem;
+  padding: 1.4rem clamp(1rem, 4vw, 2.5rem);
 }
 
 .footer-container {
@@ -539,36 +680,6 @@ body {
 }
 
 /* ===============================
-   MOBILE STABILITY PATCH
-   Prevent orientation-change repaint loops
-   =============================== */
-
-@media (max-width: 768px) {
-
-  .site-header {
-    backdrop-filter: none;
-  }
-
-  .hero-image img,
-  .about-image img {
-    filter: drop-shadow(0 0 40px rgba(255, 60, 55, 0.6));
-  }
-
-  .hero-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .hero-image img {
-    width: 280px;
-    max-width: 85vw;
-    height: auto;
-  }
-}
-
-
-/* ===============================
    SERVICES PAGE
    =============================== */
 
@@ -585,11 +696,11 @@ body {
 .services-hero-inner {
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 2.5rem;
+  padding: 0 clamp(1rem, 4vw, 2.5rem);
 }
 
 .services-hero h1 {
-  font-size: 2.6rem;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
   font-weight: 700;
   margin-bottom: 1rem;
 }
@@ -610,7 +721,7 @@ body {
 .services-detail {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 3.5rem 2.5rem;
+  padding: 3.5rem clamp(1rem, 4vw, 2.5rem);
   display: grid;
   gap: 2.2rem;
 }
@@ -685,11 +796,11 @@ body {
 .contact-hero-inner {
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 2.5rem;
+  padding: 0 clamp(1rem, 4vw, 2.5rem);
 }
 
 .contact-hero h1 {
-  font-size: 2.6rem;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
   font-weight: 700;
   margin-bottom: 1.1rem;
 }
@@ -704,7 +815,7 @@ body {
 .contact-content {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 3.5rem 2.5rem 5rem;
+  padding: 3.5rem clamp(1rem, 4vw, 2.5rem) 5rem;
   display: grid;
   gap: 2.2rem;
 }
@@ -770,11 +881,11 @@ body {
 .about-hero-inner {
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 2.5rem;
+  padding: 0 clamp(1rem, 4vw, 2.5rem);
 }
 
 .about-hero h1 {
-  font-size: 2.6rem;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
   font-weight: 700;
   margin-bottom: 1.1rem;
 }
@@ -786,10 +897,10 @@ body {
 }
 
 /* Content */
-.about-content {
+.about-page .about-content {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 3.5rem 2.5rem 5rem;
+  padding: 3.5rem clamp(1rem, 4vw, 2.5rem) 5rem;
   display: grid;
   gap: 2.2rem;
 }
@@ -855,11 +966,11 @@ body {
 .policy-hero-inner {
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 2.5rem;
+  padding: 0 clamp(1rem, 4vw, 2.5rem);
 }
 
 .policy-hero h1 {
-  font-size: 2.4rem;
+  font-size: clamp(1.7rem, 3.2vw, 2.4rem);
   font-weight: 700;
   margin-bottom: 1.1rem;
 }
@@ -874,7 +985,7 @@ body {
 .policy-content {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 3.5rem 2.5rem 5rem;
+  padding: 3.5rem clamp(1rem, 4vw, 2.5rem) 5rem;
   display: grid;
   gap: 2rem;
 }
@@ -965,8 +1076,7 @@ body {
 
 /* Make the logo behind more visible */
 .vulnplc-logo {
-  width: 360px;          /* closer to your “original” feel */
-  max-width: 360px;
+  width: min(360px, 100%);
   height: auto;
   object-fit: contain;
   display: block;
@@ -992,7 +1102,7 @@ body {
   z-index: 2;
 }
 
-/* No “container” look: figure itself is transparent */
+/* No "container" look: figure itself is transparent */
 .vulnplc-card {
   margin: 0;
   background: transparent;
@@ -1002,13 +1112,7 @@ body {
   box-shadow: none;
   backdrop-filter: none;
 }
-.vulnplc-card figcaption {
-  margin-top: 6px;
-  padding: 0;
-  font-size: 0.8rem;
-  opacity: 0.75;
-  text-align: center;
-}
+
 .vulnplc-card img {
   cursor: zoom-in;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -1048,7 +1152,7 @@ body {
 /* Plain text caption (no box) */
 .vulnplc-card figcaption {
   margin-top: 10px;
-  padding: 0;            /* removes “container” feel */
+  padding: 0;            /* removes "container" feel */
   background: transparent;
   border: none;
 
@@ -1147,4 +1251,3 @@ body {
 .vulnplc-lightbox-close:hover {
   border-color: rgba(196, 22, 28, 0.35);
 }
-
